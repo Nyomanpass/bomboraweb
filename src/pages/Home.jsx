@@ -12,7 +12,7 @@ import Footer from "../components/Footer"
 const Home = () => {
   return (
     <>
-        <Navbar/>
+        <Navbar color="text-white" gambar="/logo1.png"/>
         <Hero id="home"/>
         <About id="about"/>
         <PriceList/>

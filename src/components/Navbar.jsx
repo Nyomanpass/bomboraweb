@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({gambar, color}) => {
     let [open, setOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     
@@ -22,27 +22,29 @@ const Navbar = () => {
         <div className="container">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-32">
-                    {scrolled ? <img src="/logo.png" className="w-[130px] md:w-[150px]" alt="" /> : <img src="/logo1.png" className="w-[130px] md:w-[150px]" alt="" />}                           
+                    {scrolled ? <img src="/logo.png" className="w-[130px] md:w-[150px]" alt="" /> : <img src={gambar} className="w-[130px] md:w-[150px]" alt="" />}                           
                 </div>
 
                 <ul className='md:flex hidden md:flex-row flex-col gap-7 mt-10 md:mt-0'>
-                        <li><Link to="/#home" className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Home</Link></li>
-                        <li><Link to="/#about"  className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>About</Link></li>
-                        <li><a href="/#portofolio" className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Portofolio</a></li>
-                        <li><a href=""  className={`font-inter ${scrolled ? 'text-customDark': 'text-white'}`}>Contact</a></li>      
+                        <li><Link to="/#home" className={`font-inter ${scrolled ? 'text-customLight': color}`}>Home</Link></li>
+                        <li><Link to="/#about"  className={`font-inter ${scrolled ? 'text-customLight': color}`}>About</Link></li>
+                        <li><Link to="/templates"  className={`font-inter ${scrolled ? 'text-customLight': color}`}>Templates</Link></li>
+                        <li><a href="/#portofolio" className={`font-inter ${scrolled ? 'text-customLight': color}`}>Portofolio</a></li>
+                        <li><a href=""  className={`font-inter ${scrolled ? 'text-customLight': color}`}>Contact</a></li>      
                  </ul>     
 
                 <nav className={`z-20 lg:hidden absolute lg:static duration-500 md:w-auto md:bg-transparand shadow-lg md:shadow-none top-0 left-0 w-full bg-slate-100 md:bg-transparent px-4 py-5 md:py-0 ${open ? 'top-0 pb-10' : 'top-[-1000%]'}`}>
                     <img src="/logo.png" className="w-[130px] md:w-[150px] mt-3 duration-500" alt="" />
                     <ul className='flex sm:hidden md:flex-row flex-col gap-7 mt-10 md:mt-0'>
-                        <li><a href="/" className='text-slate-900 font-inter'>Home</a></li>
-                        <li><a href="/about" className=' text-slate-900 font-inter'>About</a></li>
-                        <li><a href="" className='text-slate-900 font-inter'>Portofolio</a></li>
-                        <li><a href="" className='text-slate-900 font-inter'>Contact</a></li>
+                        <li><a href="/" className='text-customLight font-inter'>Home</a></li>
+                        <li><a href="/about" className=' text-customLight font-inter'>About</a></li>
+                        <li><a href="/templates" className=' text-customLight font-inter'>Templates</a></li>
+                        <li><a href="" className='text-customLight font-inter'>Portofolio</a></li>
+                        <li><a href="" className='text-customLight font-inter'>Contact</a></li>
                         
                     </ul>     
 
-                    <div className="flex md:hidden text-slate-900 mt-9 items-center gap-6 pr-6 pt-3 lg:pr-10">
+                    <div className="flex md:hidden text-customLight mt-9 items-center gap-6 pr-6 pt-3 lg:pr-10">
                         <div className="text-2xl"><ion-icon name="logo-instagram"></ion-icon></div>
                         <div className="text-2xl"><ion-icon name="logo-tiktok"></ion-icon></div>
                         <div className="text-2xl"><ion-icon name="logo-whatsapp"></ion-icon></div>
@@ -50,7 +52,7 @@ const Navbar = () => {
                 </nav>
 
                
-                <div className={`md:block hidden ${scrolled ? 'text-customDark':'text-white'}`}>
+                <div className={`md:block hidden ${scrolled ? 'text-customLight':color}`}>
                     <div className="flex items-center gap-6 pr-6 pt-3 lg:pr-10">
                         <div className="text-2xl"><ion-icon name="logo-instagram"></ion-icon></div>
                         <div className="text-2xl"><ion-icon name="logo-tiktok"></ion-icon></div>
