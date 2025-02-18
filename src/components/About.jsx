@@ -1,65 +1,30 @@
-import React from 'react';
-
 
 const About = () => {
   return (
     <>
-      <div className="container text-text-color pt-36">
-        <h2 className="md:text-4xl text-2xl line-clamp-6 max-w-xl font-semibold" style={{ lineHeight: '1.30' }}>
-            <span className="text-text-color">Solusi Digital Terlengkap, <br/> Semua dalam</span>  
-            <span className="text-yellow-500"> Satu Platform!</span>
+      <div className="font-worksans mx-auto px-6 md:px-12 lg:px-14 xl:px-28 pt-20 md:pt-24 lg:pt-28 xl:pt-32 text-bombora-500">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl  max-w-xl font-semibold" >
+          Semua Kebutuhan Digital Anda, Kini Ada <span className="text-bombora-600">dalam Satu Tempat</span>
         </h2>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-24 mt-14"
+          className="flex flex-col lg:flex-row md:gap-9 gap-10 lg:gap-16 mt-14"
         >
-          <div className="border-t border-slate-900 py-6">
-            <h1 className='font-bold mb-2 text-xl md:text-2xl'>Website Development</h1>
-            <p className="text-sm md:text-lg">Situs web khusus dan profesional yang meningkatkan kehadiran online Anda, mendorong keterlibatan, dan mengubah pengunjung menjadi pelanggan setia.</p>
+          <div className="lg:w-1/3">
+            <h1 className='font-semibold mb-3 text-xl lg:text-2xl border-t border-bombora-500 pt-7'>Website Development</h1>
+            <p className="xl:text-lg">Kami buat website profesional & custom yang gak cuma keren, tapi juga bantu bisnis Anda lebih mudah ditemukan, menarik pelanggan, dan meningkatkan penjualan!</p>
           </div>
-          <div className="border-t border-slate-900 py-6">
-            <h1 className='font-bold mb-2 text-xl md:text-2xl'>Marketing Design:</h1>
-            <p className="text-sm md:text-lg">Desain kreatif yang menarik perhatian, mengomunikasikan pesan Anda, dan meningkatkan penjualan dengan menyelaraskan dengan strategi merek Anda.</p>
+          <div className="lg:w-1/3">
+            <h1 className='font-bold mb-3 text-xl lg:text-2xl border-t border-bombora-500 pt-7'>Marketing Design:</h1>
+            <p className="xl:text-lg">Desain kreatif yang bukan cuma menarik, tapi juga menyampaikan pesan bisnis Anda dengan tepat. Brand makin dikenal, penjualan makin naik!</p>
           </div>
-          <div className="border-t border-slate-900 py-6">
-            <h1 className='font-bold mb-2 text-xl md:text-2xl'>Grow online</h1>
-            <p className="text-sm md:text-lg">Perluas kehadiran online Anda dengan strategi bertarget yang menarik, melibatkan, dan mengubah prospek menjadi pelanggan setia, sehingga memastikan pertumbuhan bisnis yang berkelanjutan.</p>
+          <div className="lg:w-1/3">
+            <h1 className='font-bold mb-3 text-xl lg:text-2xl border-t border-bombora-500 pt-7'>Grow online</h1>
+            <p className="xl:text-lg">Strategi digital yang tepat untuk menjangkau lebih banyak pelanggan, membangun interaksi, dan mengubah mereka jadi pelanggan setia. Bisnis tumbuh lebih cepat!</p>
           </div>
         </div>
       </div>
 
-      <div className="mb-10">
-        <div
-          className="container text-text-color grid grid-cols-1 md:grid-cols-2 gap-4 py-24"
-        >
-          <div className="">
-            
-            <h1
-              className='text-2xl md:text-4xl mb-4 font-semibold'
-              style={{ lineHeight: '1.30' }}
-            >
-           Dirancang dengan baik dan dikembangkan dengan sepenuh hati
-            </h1>
-            <p className="text-sm md:text-lg">
-            Perencanaan yang matang membuat kami percaya diri, dikembangkan dengan praktik terbaik sehingga proyek dapat dipertahankan. Kami selalu menguji proyek sebelum dikirim
-            </p>
-            
-          </div>
-
-          <div className="grid grid-cols-2 items-center justify-center">
-            <img
-              className=''
-              src="/about3.png"
-              alt="bomboraweb about"
-            />
-            <img
-              className=''
-              src="about4.png"
-              alt="bombora web about"
-            />
-          </div>
-        </div>
-      </div>
     </>
   );
 };

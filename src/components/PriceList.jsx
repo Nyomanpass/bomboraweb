@@ -1,101 +1,154 @@
-import React from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom'
 
 const PriceList = () => {
+  const navigate = useNavigate()
+
+  const handleOrderClick = (paket) => {
+    navigate(`/form-pemesanan?paket=${paket}`)
+  }
+
   return (
     <>
-     <div className="bg-customLight text-white py-32 px-6">
-      <div className="container">
-      <h2 className="text-center font-inria text-2xl md:text-3xl font-bold mb-16">
-        Pilih Paket yang Sesuai dengan Bisnis Anda
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center gap-6">
-        {/* Starter Package */}
-        <div className="bg-white text-black px-6 py-14 rounded-xl w-full shadow-lg flex flex-col h-full">
-            <p className="text-gray-600 text-sm my-3">Langkah Awal Go Online</p>
-            <h3 className="text-3xl mb-1 font-semibold text-footer">Starter</h3>
-            <p className="text-4xl font-bold text-footer mb-3">Rp 1.000.000 <span className="text-sm font-normal text-text-color">/ tahun ke-1</span></p>
-            <p className="text-gray-600 text-sm mb-8">Perpanjang Rp 000.000 /tahun</p>
-            <hr />
-            <ul className="text-sm space-y-2 mt-10 mb-10 flex-grow">
-                <li>✓ 1 Halaman Website</li>
-                <li>✓ 1x Revisi</li>
-                <li>✓ Gratis Domain .com (1 tahun)</li>
-                <li>✓ Gratis Email Bisnis</li>
-                <li>✓ Gratis Hosting (1 GB)</li>
-                <li>✓ Gratis SSL</li>
-                <li>✓ Mobile Friendly</li>
-            </ul>
-            <button className="mt-auto w-full bg-button  text-white py-2 rounded-lg font-semibold">
-                Pesan Sekarang
-            </button>
-        </div>
+      <div className="font-worksans mt-14 bg-bombora-300 w-full px-6 md:px-12 lg:px-14 xl:px-28 py-16 md:py-20 lg:py-24 xl:py-28 text-bombora-100">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center">Tingkatkan Bisnis Anda dengan Paket Terbaik Bombora</h2>
+        <p className="mx-auto text-center max-w-xl lg:max-w-2xl mt-5 md:mt-8 md:text-lg lg:text-xl">Diskusikan kebutuhan bisnismu <span className="text-bombora-600">GRATIS</span> dan dapatkan rekomendasi paket terbaik dari kami!</p>
 
-
-         {/* recomand Package */}
-         <div className="bg-footer text-black px-8 py-14 rounded-xl w-full shadow-lg flex flex-col h-full">
-            <div className="flex-grow">
-                <p className="text-slate-200 text-sm my-3">Lebih Profesional, Lebih Dikenal!</p>
-                <h3 className="text-3xl mb-1 font-semibold text-button">Growth</h3>
-                <p className="text-4xl font-bold text-button mb-3">Rp 2.500.000 <span className="text-sm font-normal text-slate-200">/ tahun ke-1</span></p>
-                <p className="text-slate-200 text-sm mb-8">Perpanjang Rp 000.000 /tahun</p>
-                <hr />
-                <ul className="text-sm text-white space-y-2 mb-10 mt-10">
-                    <li>✓ 3-5 Halaman Website</li>
-                    <li>✓ 2x Revisi</li>
-                    <li>✓ SEO Basic</li>
-                    <li>✓ Gratis Domain .com (1 tahun)</li>
-                    <li>✓ Gratis Email Bisnis</li>
-                    <li>✓ Gratis Hosting Cepat (10 GB)</li>
-                    <li>✓ Gratis SSL</li>
-                    <li>✓ Animasi Interaktif</li>
-                    <li>✓ Mobile Friendly</li>
-                </ul>
+        <div className="flex flex-col lg:flex-row justify-center gap-5  mt-14 w-full ">
+          <div className=" md:mx-auto lg:mx-0 bg-white px-7 md:px-10 lg:px-5 xl:px-7 py-10 md:aspect-[4/3] md:w-[35rem] lg:aspect-[0.61/1] lg:w-fit lg:h-[32rem] xl:h-[36rem] rounded-xl text-bombora-500  hover:outline hover:outline-offset-8 hover:outline-bombora-200 transition-all ">
+            <div>
+              <p className="text-sm md:text-base lg:text-sm mb-1">Langkah Awal Go Online</p>
+              <h3 className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Starter</h3>
             </div>
-            <button className="mt-auto w-full bg-button text-white py-2 rounded-lg font-semibold">
-                Pesan Sekarang
-            </button>
-        </div>
-
-
-
-        {/* Premium Package */}
-        <div className="bg-white text-black px-8 py-14 rounded-xl w-full shadow-lg flex flex-col h-full">
-            <div className="flex-grow">
-                <p className="text-gray-600 text-sm my-3">Solusi Terbaik untuk Bisnis Anda</p>
-                <h3 className="text-3xl mb-1 font-semibold text-footer">Premium</h3>
-                <p className="text-4xl font-bold text-footer mb-3">Rp 5.000.000 <span className="text-sm font-normal text-text-color">/ tahun ke-1</span></p>
-                <p className="text-gray-600 text-sm mb-8">Perpanjang Rp 000.000 /tahun</p>
-                <hr />
-                <ul className="text-sm space-y-2  mb-10 mt-10">
-                    <li>✓ 6-10 Halaman Website</li>
-                    <li>✓ 5x Revisi</li>
-                    <li>✓ SEO Advanced</li>
-                    <li>✓ Gratis Domain .com /.id (1 tahun)</li>
-                    <li>✓ Gratis Email Bisnis</li>
-                    <li>✓ Gratis Hosting Cepat (10 GB)</li>
-                    <li>✓ Gratis SSL</li>
-                    <li>✓ Animasi Interaktif</li>
-                    <li>✓ Mobile Friendly</li>
-                </ul>
+            <div className="mt-3 ">
+              <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 1.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
+              <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
             </div>
-            <button className="mt-auto w-full bg-button text-white py-2 rounded-lg font-semibold">
-                Pesan Sekarang
+            <div className="mt-10 border-t border-bombora-500 pt-7">
+              <p>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                1-2 Halaman Website
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                1x Revisi
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Gratis Domain .com
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Gratis Email Bisnis
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Mobile Friendly
+              </p>
+            </div>
+            <button onClick={() => handleOrderClick('Starter')} className='mt-10 lg:mt-20 xl:mt-28 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl active:scale-95 transition-all duration-300'>
+              Pesan Sekarang
             </button>
+          </div>
+
+          <div className=" md:mx-auto lg:mx-0 bg-bombora-400 px-7 md:px-10 lg:px-5 xl:px-7 py-10 md:aspect-[4/3] md:w-[35rem] lg:aspect-[0.61/1] lg:w-fit lg:h-[36rem] xl:h-[40rem] rounded-xl relative text-bombora-100 hover:outline hover:outline-offset-8 hover:outline-bombora-200 transition-all">
+            <div className='w-full h-48 bg-transparent absolute top-0 left-0 right-0 overflow-hidden'>
+              <div className='absolute top-9 -right-12 px-10 py-2 bg-bombora-600 rotate-45 text-sm font-semibold text-bombora-100'><p>RECOMMENDED</p></div>
+            </div>
+            <div>
+              <p className="text-sm md:text-base lg:text-sm mb-1">lebih Profesionl, Lebih Dikenal</p>
+              <h3 className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Growth</h3>
+            </div>
+            <div className="mt-3 ">
+              <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Rp 2.500.000 <span className="text-sm md:text-base lg:text-sm text-bombora-100 font-semibold">/tahun ke-1</span></p>
+              <p className="mt-2 text-bombora-100 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+            </div>
+            <div className="mt-10 border-t border-bombora-100 pt-7 flex flex-col gap-3">
+              <p>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                3-5 Halaman Website
+              </p>
+              <p >
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                2x Revisi
+              </p>
+              <p >
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                SEO Basic
+              </p>
+              <p >
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Gratis Domain .com
+              </p>
+              <p >
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Gratis Email Bisnis
+              </p>
+              <p >
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Animasi Interaktif
+              </p>
+              <p >
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Mobile Friendly
+              </p>
+            </div>
+            <button onClick={() => handleOrderClick('Growth')} className='mt-10 lg:mt-7 xl:mt-16 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl text-bombora-500 active:scale-95 transition-all duration-300'>
+              Pesan Sekarang
+            </button>
+          </div>
+
+          <div className="md:mx-auto lg:mx-0 bg-white px-7 md:px-10 lg:px-5 xl:px-7 py-10 md:aspect-[4/3] md:w-[35rem] lg:aspect-[0.61/1] lg:w-fit lg:h-[32rem] xl:h-[36rem] rounded-xl text-bombora-500 hover:outline hover:outline-offset-8 hover:outline-bombora-200 transition-all">
+            <div>
+              <p className="text-sm md:text-base lg:text-sm mb-1">Impresi Kuat, Pelanggan Terpikat</p>
+              <h3 className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Premium</h3>
+            </div>
+            <div className="mt-3 ">
+              <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 5.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
+              <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+            </div>
+            <div className="mt-10 border-t border-bombora-500 pt-7">
+              <p>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                6-10 Halaman Website
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                5x Revisi
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                SEO Advanced
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Gratis Domain .com / .id
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Gratis Email Bisnis
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Animasi Interaktif
+              </p>
+              <p className='mt-1'>
+                <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                Mobile Friendly
+              </p>
+            </div>
+            <button onClick={() => handleOrderClick('Premium')} className='mt-10 lg:mt-5 xl:mt-14 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl active:scale-95 transition-all duration-300'>
+              Pesan Sekarang
+            </button>
+          </div>
         </div>
 
-
+        <div className="mt-12 md:mt-16 lg:mt-20 w-full bg-bombora-400 rounded-xl flex flex-col items-center py-12 md:py-14 px-4 text-center hover:outline hover:outline-offset-8 hover:outline-bombora-200 transition-all">
+          <h3 className='font-semibold text-xl md:text-2xl lg:text-3xl'>Paket DIatas Masih Tidak Cocok Dengan Kebutuhan Anda?</h3>
+          <a className='mt-5 font-medium md:text-xl w-[90%] cursor-pointer'>Coba Paket Custom dan Konsultasikan Masalah Anda Disini <span className='text-bombora-600 font-semibold'>GRATIS</span></a>
+        </div>
       </div>
-
-      {/* Custom Plan Section */}
-      <div className="mt-10 bg-footer px-5 text-black py-10 text-center rounded-xl">
-        <h3 className="md:text-2xl font-semibold text-white mb-4">
-          Paket Diatas Masih Tidak Cocok Dengan Kebutuhan Anda?
-        </h3>
-        <p className='text-slate-200 text-md mt-5'>Coba Paket Custom dan Konsultasikan disini <span className='font-bold text-2xl text-button'>Gratis</span></p>
-      </div>
-      </div>
-    </div>
     </>
   )
 }
