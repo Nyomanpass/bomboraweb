@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 const Portofolio = () => {
 
   const [images, setImages] = useState([]);
-  let base_url = "http://localhost:8888/bomboratemplates/";
+  let base_url = "https://template.bomboraweb.com/";
 
   const getTemplates = async () => {
     let url = `${base_url}api/template.php?request=filter&page=1&limit=8`
