@@ -1,35 +1,85 @@
 import Navbar2 from '../components/Navbar2';
 import { useLocation } from 'react-router-dom';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-
-// Pindahkan pilihanTemplate ke atas sebelum digunakan
-const pilihanTemplate = [
-      { image: "/porto6.webp", value: "travelAgent1", title: "Travel Agent" },
-      { image: "/porto9.webp", value: "travelAgent2", title: "Travel Agent 2" },
-      { image: "/porto5.webp", value: "travelAgent3", title: "Travel Agent 3" },
-      { image: "/porto4.webp", value: "organicStore", title: "Organic Store" },
-      { image: "/porto2.webp", value: "organicStore2", title: "Organic Store 2" },
-      { image: "/porto7.webp", value: "productExportir", title: "Product Exportir" },
-      { image: "/porto8.webp", value: "lifeStyleCourse", title: "Life Style Course" },
-      { image: "/porto4.webp", value: "handyCraftProduct", title: "Handy Craft Product" },
-      { image: "/porto12.webp", value: "foodandBeverage", title: "Food and Beverage Business" },
-      { image: "/portoCustom.webp", value: "customDesign", title: "Custom Design Website" },
-];
+import axios from 'axios';
 
 const FormPemesanan = () => {
+      const base_url = "https://template.bomboraweb.com/";
+      const [templates, setTemplates] = useState([]);
+      const [templateForm, setTemplateForm] = useState([])
+
+      const getTemplateForm = async () => {
+            try{
+                  const url = `${base_url}api/template.php?request=filter&page=1&limit=5`
+                  const response = await axios.get(url);
+                  const templates = response.data.data;
+                  const lastId = templates.length > 0 ? Math.max(...templates.map(t => t.id)) : 0;
+                  const newTemplate = {
+                        id: lastId + 1,
+                        template_name: "custom desain",
+                        category: "-",
+                        thumbnail: "/portoCustom.webp",
+                        foldername: "custom"
+                      };
+                      setTemplateForm([...templates, newTemplate]);
+            }catch(error){
+                  console.log(error);
+            }
+      }
+
+      const getTemplates = async () => {
+            try {
+              const url = `${base_url}api/template.php?request=filter`; 
+              const response = await axios.get(url);
+              const templates = response.data.data;
+              const lastId = templates.length > 0 ? Math.max(...templates.map(t => t.id)) : 0;
+              const newTemplate = {
+                    id: lastId + 1,
+                    template_name: "custom desain",
+                    category: "-",
+                    thumbnail: "/portoCustom.webp",
+                    foldername: "custom"
+                  };
+                  setTemplates([...templates, newTemplate]);
+          
+            } catch (error) {
+              console.error("Error fetching templates:", error);
+            }
+          };
+          
+          
+          // Panggil saat komponen dimount
+      useEffect(() => {
+        getTemplates();
+        getTemplateForm()
+      }, []);
+
       const location = useLocation();
       const queryParams = new URLSearchParams(location.search);
+      const templateFromURL = queryParams.get('template');
       const paket = queryParams.get('paket');
       const [isSubmitted, setIsSubmitted] = useState(false);
 
-      const [selectedValue, setSelectedValue] = useState("");
-      const selectedTemplate = pilihanTemplate.find((template) => template.value === selectedValue);
+     
+      // const selectedTemplate = templates.find((template) => template.template_name === selectedValue);
+      const [selectedTemplate, setSelectedTemplate] = useState(null);
 
-      const handleTemplateChange = (event) => {
-            setSelectedValue(event.target.value);
-      };
+      useEffect(() => {
+            if (templateFromURL) {
+                const foundTemplate = templates.find(t => t.foldername === templateFromURL);
+                if (foundTemplate) {
+                    setSelectedTemplate(foundTemplate);
+                    setFormData((prev) => ({
+                        ...prev,
+                        template: templateFromURL, // Update formData.template
+                    }));
+                }
+            }
+        }, [templateFromURL, templates]);
+    
 
+ 
 
       const [selectedPaket, setSelectedPaket] = useState(paket);
       const [selectedDomain, setSelectedDomain] = useState("com");
@@ -64,9 +114,14 @@ const FormPemesanan = () => {
       };
 
       const handleCombinedChange = (event) => {
-            handleTemplateChange(event);
-            handleChange(event);
-      }
+            const selectedName = event.target.value;
+            const foundTemplate = templates.find(t => t.foldername === selectedName);
+            setSelectedTemplate(foundTemplate);
+            setFormData((prev) => ({
+                  ...prev,
+                  template: selectedName, // Update formData.template dengan foldername yang dipilih
+              }));
+        };
 
       const handleCombinedChange2 = (event) => {
             handlePaketChange(event);
@@ -107,13 +162,13 @@ const FormPemesanan = () => {
       return (
             <>
                   <Navbar2 />
-                  <div className='py-24 md:py-28 lg:py-32 font-worksans px-6 md:px-12 lg:px-14 xl:px-28 relative'>
+                  <div className='py-28 md:py-28 lg:py-32 font-worksans px-6 md:px-12 lg:px-14 xl:px-28 relative'>
 
                         <h1 className="mb-10 text-3xl md:text-4xl text-bombora-300 font-semibold text-center">Form Pemesanan</h1>
                         <form ref={form} onSubmit={handleSubmit} className='w-full max-w-5xl mx-auto overflow-hidden'>
 
                               <div className='flex gap-6 text-lg mb-8 md:mb-10'>
-                                    <p className='text-3xl font-semibold text-bombora-100 text-stroke'>1</p>
+                                    <p className='text-3xl hidden sm:block font-semibold text-bombora-100 text-stroke'>1</p>
                                     <div className='flex flex-col md:text-lg w-full'>
                                           <label htmlFor="paket" className='mb-3 '>Pilih Paket Bombora</label>
                                           <select name="paket" id="paket" defaultValue={paket} onChange={handleCombinedChange2} value={selectedPaket} className='bg-bombora-100 border-bombora-500/20 w-full px-4 py-2 border rounded-md focus:outline-bombora-300'>
@@ -127,35 +182,60 @@ const FormPemesanan = () => {
                               </div>
 
                               <div className='flex gap-6 text-lg mb-8 md:mb-10'>
-                                    <p className='text-3xl font-semibold text-bombora-100 text-stroke'>2</p>
+                                    <p className='text-3xl hidden sm:block font-semibold text-bombora-100 text-stroke'>2</p>
                                     <div className='flex flex-col md:text-lg w-full'>
+                                    <div className="flex items-center gap-7">
                                           <p className='mb-3'>Pilih Template Website</p>
-                                          <p>{selectedTemplate ? <>Template yang dipilih: <span className="text-bombora-300">{selectedTemplate.title}</span></> : ""}</p>
-                                          <div className='w-full overflow-x-auto'>
-                                                <div className='flex gap-4 w-max py-3 pr-20'>
-                                                      {pilihanTemplate.map((template, index) => (
-                                                            <label key={index} className="flex gap-4 items-center cursor-pointer">
-                                                                  <input
-                                                                        type="radio"
-                                                                        name="template"
-                                                                        value={template.value}
-                                                                        className="peer hidden"
-                                                                        onChange={handleCombinedChange}
-                                                                  />
-                                                                  <img
-                                                                        src={template.image}
-                                                                        alt={template.title}
-                                                                        className="w-80 peer-checked:outline peer-checked:outline-offset-4 peer-checked:outline-bombora-300 rounded-lg "
-                                                                  />
-                                                            </label>
-                                                      ))}
-                                                </div>
+                                          <a href="/templates" className='mb-3 text-sm sm:px-5 sm:py-3 sm:border sm:border-bombora-300 sm:hover:bg-bombora-300 sm:hover:text-white sm:bg-bombora-100 text-bombora-300 rounded-full'>
+                                                Lihat lebih banyak
+                                          </a>
+                                    </div>
+                                    <p>
+                                          {selectedTemplate ? <p className="sm:text-lg text-sm">Template yang dipilih: <span className="text-bombora-300">{selectedTemplate.template_name}</span></p> : ""}
+                                    </p>
+                                    <div className='w-full px-2 overflow-x-auto'>
+                                          <div className='flex gap-4 w-max py-3 pr-20'>
+                                                {templateFromURL
+                                                ? templates.filter(t => t.foldername === templateFromURL).map((template, index) => (
+                                                      <label key={index} className="flex gap-4 items-center cursor-pointer">
+                                                            <input
+                                                            type="radio"
+                                                            name="template"
+                                                            value={template.foldername}
+                                                            className="peer hidden"
+                                                            onChange={handleCombinedChange}
+                                                            checked={selectedTemplate?.foldername === template.foldername} 
+                                                            />
+                                                            <img
+                                                            src={`${base_url}image/${template.thumbnail}`}
+                                                            alt={template.template_name}
+                                                            className="w-80 peer-checked:outline peer-checked:outline-offset-4 peer-checked:outline-bombora-300 rounded-lg"
+                                                            />
+                                                      </label>
+                                                ))
+                                                : templateForm.map((template, index) => (
+                                                      <label key={index} className="flex gap-4 items-center cursor-pointer">
+                                                            <input
+                                                            type="radio"
+                                                            name="template"
+                                                            value={template.foldername}
+                                                            className="peer hidden"
+                                                            onChange={handleCombinedChange}
+                                                            />
+                                                            <img
+                                                            src={`${base_url}image/${template.thumbnail}`}
+                                                            alt={template.template_name}
+                                                            className="w-80 peer-checked:outline peer-checked:outline-offset-4 peer-checked:outline-bombora-300 rounded-lg"
+                                                            />
+                                                      </label>
+                                                ))}
                                           </div>
+                                    </div>
                                     </div>
                               </div>
 
                               <div className='flex gap-6 text-lg mb-8 md:mb-10 group'>
-                                    <p className='text-3xl font-semibold text-bombora-100 text-stroke'>3</p>
+                                    <p className='text-3xl hidden sm:block font-semibold text-bombora-100 text-stroke'>3</p>
                                     <div className='flex flex-col md:text-lg  w-full'>
                                           <label htmlFor="nama" className='mb-3 '>Nama Owner/Bisnis</label>
                                           <input type="text" name="nama" onChange={handleChange} disabled={!formData.template} className='bg-bombora-100 border-bombora-500/20 w-full px-4 py-2 border rounded-md focus:outline-bombora-300 disabled:cursor-not-allowed' />
@@ -163,8 +243,8 @@ const FormPemesanan = () => {
                                     </div>
                               </div>
 
-                              <div className='flex gap-6'>
-                                    <p className='text-3xl font-semibold text-bombora-100 text-stroke'>4</p>
+                              <div className='flex gap-2 sm:gap-6'>
+                                    <p className='text-3xl hidden sm:block font-semibold text-bombora-100 text-stroke'>4</p>
                                     <div className='flex gap-6 mb-8 md:mb-10 w-1/2'>
                                           <div className='flex flex-col md:text-lg  w-full'>
                                                 <label htmlFor="email" className='mb-3 '>Email</label>
@@ -172,7 +252,7 @@ const FormPemesanan = () => {
                                                 <p className='text-xs text-bombora-300 mt-1'>{!formData.nama ? "*isi nama Owner/Bisnis terlebih dahulu" : ""}</p>
                                           </div>
                                     </div>
-                                    <div className='flex gap-6  mb-8 md:mb-10 w-1/2'>
+                                    <div className='flex gap-6 mb-8 md:mb-10 w-1/2'>
                                           <div className='flex flex-col md:text-lg  w-full'>
                                                 <label htmlFor="telepon" className='mb-3 '>No. Telepon</label>
                                                 <input type="number" name="telepon" onChange={handleChange} disabled={!formData.nama} className='bg-bombora-100 border-bombora-500/20 w-full px-4 py-2 border rounded-md focus:outline-bombora-300 disabled:cursor-not-allowed' />
@@ -183,7 +263,7 @@ const FormPemesanan = () => {
 
 
                               <div className='flex gap-6 text-lg mb-8 md:mb-10'>
-                                    <p className='text-3xl font-semibold text-bombora-100 text-stroke'>5</p>
+                                    <p className='text-3xl hidden sm:block font-semibold text-bombora-100 text-stroke'>5</p>
                                     <div className='flex flex-col md:text-lg w-full'>
                                           <label htmlFor="domain" className='mb-3 '>Domain</label>
                                           <div className='bg-bombora-100 border-bombora-500/20 w-full border rounded-md focus:outline-bombora-300'>
@@ -199,7 +279,7 @@ const FormPemesanan = () => {
                               </div>
 
                               <div className='flex gap-6 text-lg mb-8 md:mb-10 group'>
-                                    <p className='text-3xl font-semibold text-bombora-100 text-stroke'>6</p>
+                                    <p className='text-3xl hidden sm:block font-semibold text-bombora-100 text-stroke'>6</p>
                                     <div className='flex flex-col md:text-lg  w-full'>
                                           <label htmlFor="message" className='mb-3 '>Website seperti apa yang Anda inginkan?</label>
 
@@ -209,8 +289,8 @@ const FormPemesanan = () => {
                               </div>
 
 
-                              <p className='text-xs  ml-10 mb-3 text-bombora-300'>*pembayaran dilakukan setelah pemesanan disetujui oleh tim kami</p>
-                              <button className='ml-10 bg-bombora-600 text-bombora-500 font-semibold px-12 py-3 rounded-md hover:bg-bombora-700 hover:bg-bombora-300 hover:text-bombora-100 transition-all active:scale-95' type="submit">
+                              <p className='text-xs  sm:ml-10 mb-3 text-bombora-300'>*pembayaran dilakukan setelah pemesanan disetujui oleh tim kami</p>
+                              <button className='sm:ml-10 bg-bombora-600 text-bombora-500 font-semibold px-12 py-3 rounded-md hover:bg-bombora-700 hover:bg-bombora-300 hover:text-bombora-100 transition-all active:scale-95' type="submit">
                                     Kirim Sekarang
                               </button>
                         </form>

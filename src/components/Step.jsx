@@ -47,7 +47,7 @@ const Step = () => {
 
   return (
     <>
-      <section className="px-6 md:px-12 lg:px-14 xl:px-28 pt-24 md:pt-28 font-worksans bg-bombora-100 text-bombora-500">
+      <section className="px-6 md:px-12 lg:px-14 xl:px-28 py-24 md:py-28 font-worksans bg-bombora-100 text-bombora-500">
         <div className="text-center mb-16 md:mb-20 lg:mb-24">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">6 Langkah Simpel Untuk Punya <span className="text-bombora-600">Website Profesional</span></h2>
           <p className="mt-4 md:mt-8 md:text-lg lg:text-xl max-w-4xl mx-auto">Proses pesan website di Bombora gampang banget, loh! Cukup ikuti 6 langkah ini, dan website profesional Anda siap membantu bisnis makin berkembang</p>

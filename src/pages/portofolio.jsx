@@ -33,7 +33,7 @@ const Portofolio = () => {
                               <p className="text-center text-lg md:text-2xl font-semibold text-bombora-600 mb-2">Portofolio</p>
                               <h1 className="text-center text-3xl md:text-4xl font-semibold text-bombora-400 ">Karya Terbaik Kami untuk Bisnis Terbaik Anda </h1>
                         </div>
-                        <div className="w-full grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 lg:gap-8">
+                        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 lg:gap-8">
                               {
                                     porto.map((item, index) => {
                                           return (

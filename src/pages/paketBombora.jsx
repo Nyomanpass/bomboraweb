@@ -30,7 +30,7 @@ const PaketBombora = () => {
                                           </div>
                                           <div className="mt-3 ">
                                                 <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 1.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
-                                                <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+                                                <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 750.000 /tahun</p>
                                           </div>
                                           <div className="mt-10 border-t border-bombora-500 pt-7">
                                                 <p>
@@ -69,7 +69,7 @@ const PaketBombora = () => {
                                           </div>
                                           <div className="mt-3 ">
                                                 <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Rp 2.500.000 <span className="text-sm md:text-base lg:text-sm text-bombora-100 font-semibold">/tahun ke-1</span></p>
-                                                <p className="mt-2 text-bombora-100 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+                                                <p className="mt-2 text-bombora-100 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 1.500.000 /tahun</p>
                                           </div>
                                           <div className="mt-10 border-t border-bombora-100 pt-7 flex flex-col gap-3">
                                                 <p>
@@ -78,7 +78,7 @@ const PaketBombora = () => {
                                                 </p>
                                                 <p >
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      2x Revisi
+                                                      3x Revisi
                                                 </p>
                                                 <p >
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
@@ -113,7 +113,7 @@ const PaketBombora = () => {
                                           </div>
                                           <div className="mt-3 ">
                                                 <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 5.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
-                                                <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+                                                <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 3.000.000 /tahun</p>
                                           </div>
                                           <div className="mt-10 border-t border-bombora-500 pt-7">
                                                 <p>
@@ -122,7 +122,7 @@ const PaketBombora = () => {
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      5x Revisi
+                                                      Bebas Revisi sebelum live
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
@@ -144,6 +144,7 @@ const PaketBombora = () => {
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
                                                       Mobile Friendly
                                                 </p>
+                                                
                                           </div>
                                           <button onClick={() => handleOrderClick('Premium')} className='mt-10 lg:mt-5 xl:mt-14 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl active:scale-95 transition-all duration-300'>
                                                 Pesan Sekarang
@@ -277,7 +278,7 @@ const PaketBombora = () => {
                                                                   3x
                                                             </td>
                                                             <td className="px-6 py-8">
-                                                                  5x
+                                                                  Bebas Revisi Sebelum Live
                                                             </td>
                                                       </tr>
                                                       <tr className="bg-white border-b  border-gray-200">

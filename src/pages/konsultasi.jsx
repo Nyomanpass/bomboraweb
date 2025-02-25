@@ -1,4 +1,5 @@
 import Navbar2 from '../components/Navbar2';
+import Footer from "../components/Footer"
 import { useState } from 'react';
 
 const Konsultasi = () => {
@@ -55,6 +56,7 @@ const Konsultasi = () => {
                               </button>
                         </form>
                   </div>
+                  <Footer/>
             </>
       )
 }

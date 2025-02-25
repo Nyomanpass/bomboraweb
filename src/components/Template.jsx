@@ -3,21 +3,32 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const Portofolio = () => {
-  const portoImage = [
-    "/porto3.webp",
-    "/porto5.webp",
-    "/porto6.webp",
-    "/porto7.webp",
-    "/porto8.webp",
-    "/porto9.webp",
-    "/porto11.webp",
-    "/porto12.webp",
-  ];
+
+  const [images, setImages] = useState([]);
+  let base_url = "http://localhost:8888/bomboratemplates/";
+
+  const getTemplates = async () => {
+    let url = `${base_url}api/template.php?request=filter&page=1&limit=8`
+    try{
+      const response = await axios.get(url)
+      setImages(response.data.data);
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{
+    getTemplates();
+  },[])
+
+
 
   return (
-    <div className="bg-bombora-300 text-bombora-100 pb-32 mt-24 font-worksans">
+    <div className="bg-bombora-300 text-bombora-100 pb-32 pt-16 font-worksans">
       <div className="px-6 md:px-12 lg:px-14 xl:px-28 pt-24 mb-16 md:mb-20 lg:mb-24">
         <h2 className='text-2xl md:text-3xl lg:text-4xl font-semibold text-center'>
           Template Website yang Sesuai dengan Gaya Bisnis Anda
@@ -48,9 +59,9 @@ const Portofolio = () => {
         }}
         modules={[Autoplay]}
       >
-        {portoImage.map((image, index) => (
+        {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={image} alt={`Portofolio ${index + 1}`} className="w-full aspect-video rounded-xl" />
+            <img src={`${base_url}/image/${image.thumbnail}`} alt={`Portofolio ${index + 1}`} className="w-full aspect-video rounded-xl" />
           </SwiperSlide>
         ))}
       </Swiper>

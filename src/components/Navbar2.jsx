@@ -39,7 +39,7 @@ const Navbar2 = () => {
 
                               {/* mobile navbar */}
                               <nav className={`z-20 lg:hidden absolute lg:static duration-500 md:w-auto shadow-lg md:shadow-none top-0 left-0 w-full bg-bombora-100 md:bg-transparent px-6 py-5 md:py-0 ${open ? 'top-0 pb-10' : 'top-[-1000%]'}`}>
-                                    <img src="/logo.png" className="w-[130px] md:w-[150px] mt-3 duration-500" alt="" />
+                                    <a href="/"><img src="/logo.png" className="w-[130px] md:w-[150px] mt-3 duration-500" alt="" /></a>
                                     <ul className='flex sm:hidden md:flex-row flex-col gap-6 mt-10 md:mt-0 tracking-wide'>
                                           <li><a href="/paket-bombora" className=' text-bombora-500'>Paket Bombora</a></li>
                                           <li><a href="/templates" className='  text-bombora-500'>Templates</a></li>
@@ -61,7 +61,7 @@ const Navbar2 = () => {
 
                               <div
                                     onClick={() => setOpen(!open)}
-                                    className={`z-20 text-3xl pt-3 md:hidden duration-500  text-bombora-500`}
+                                    className={`z-20 text-3xl pt-3 md:hidden duration-500  text-bombora-300`}
                               >
                                     <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
                               </div>

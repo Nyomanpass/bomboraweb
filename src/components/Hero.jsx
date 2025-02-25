@@ -16,9 +16,9 @@ const Hero = () => {
                             </p>
                         </div>
 
-                        <button className="px-8 py-4 bg-bombora-600 text-bombora-500 font-semibold rounded-full hover:bg-bombora-400 hover:text-bombora-100 transition duration-300 mt-14 text-lg lg:text-xl active:scale-95 shadow-md">
+                        <a href="/form-pemesanan" className="px-8 inline-block py-4 bg-bombora-600 text-bombora-500 font-semibold rounded-full hover:bg-bombora-400 hover:text-bombora-100 transition duration-300 mt-14 text-lg lg:text-xl active:scale-95 shadow-md">
                             Online-kan Sekarang
-                        </button>
+                        </a>
                     </div>
 
                     <div className="order-1 md:order-2 mb-10 md:mb-0 md:mt-8 lg:mt-20">

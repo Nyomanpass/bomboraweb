@@ -23,7 +23,7 @@ const PriceList = () => {
             </div>
             <div className="mt-3 ">
               <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 1.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
-              <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+              <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 750.000 /tahun</p>
             </div>
             <div className="mt-10 border-t border-bombora-500 pt-7">
               <p>
@@ -62,7 +62,7 @@ const PriceList = () => {
             </div>
             <div className="mt-3 ">
               <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Rp 2.500.000 <span className="text-sm md:text-base lg:text-sm text-bombora-100 font-semibold">/tahun ke-1</span></p>
-              <p className="mt-2 text-bombora-100 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+              <p className="mt-2 text-bombora-100 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 1.500.000 /tahun</p>
             </div>
             <div className="mt-10 border-t border-bombora-100 pt-7 flex flex-col gap-3">
               <p>
@@ -71,7 +71,7 @@ const PriceList = () => {
               </p>
               <p >
                 <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                2x Revisi
+                3x Revisi
               </p>
               <p >
                 <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
@@ -106,7 +106,7 @@ const PriceList = () => {
             </div>
             <div className="mt-3 ">
               <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 5.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
-              <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 000.000 /tahun</p>
+              <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 3.000.000 /tahun</p>
             </div>
             <div className="mt-10 border-t border-bombora-500 pt-7">
               <p>
@@ -115,7 +115,7 @@ const PriceList = () => {
               </p>
               <p className='mt-1'>
                 <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                5x Revisi
+                Bebas Revisi Sebelum Live
               </p>
               <p className='mt-1'>
                 <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
