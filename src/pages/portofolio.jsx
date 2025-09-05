@@ -31,7 +31,7 @@ const Portofolio = () => {
             //       hoverImage: "/logoInfusionBali.png",
             // },
             {
-                  linktoWeb: "lawyerdibali.com",
+                  linktoWeb: "uluwatutempleguide.id",
                   title: "Uluwatu Temple Guide",
                   image: "/uluwatuTempleGuide.png",
                   hoverImage: "/logoUluwatuTemple.png",
