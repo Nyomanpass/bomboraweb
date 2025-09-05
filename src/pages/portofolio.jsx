@@ -6,6 +6,43 @@ import Footer from "../components/Footer";
 const Portofolio = () => {
       const porto = [
             {
+                  linktoWeb: "jrprintshopbali.com",
+                  title: "JR Design Print Shop",
+                  image: "/JrDesign.png",
+                  hoverImage: "/logoJrDesign.png",
+            },
+            {
+                  linktoWeb: "yankartagym.com",
+                  title: "Yankarta GYM",
+                  image: "/yankartaGym.png",
+                  hoverImage: "/logoYankartaGym.png",
+            },
+            {
+                  linktoWeb: "davillamanagement.com",
+                  title: "Villa Management",
+                  image: "/villaManagement.png",
+                  hoverImage: "/logoVillaManagement.png",
+            },
+            // tunggu launching
+            // {
+            //       linktoWeb: "infusionbali.com",
+            //       title: "Infusion Bali",
+            //       image: "/infusionBali.png",
+            //       hoverImage: "/logoInfusionBali.png",
+            // },
+            {
+                  linktoWeb: "lawyerdibali.com",
+                  title: "Uluwatu Temple Guide",
+                  image: "/uluwatuTempleGuide.png",
+                  hoverImage: "/logoUluwatuTemple.png",
+            },
+            {
+                  linktoWeb: "lawyerdibali.com",
+                  title: "Lawyer Bali",
+                  image: "/lawyerBali.png",
+                  hoverImage: "/logoLawyer.png",
+            },
+            {
                   linktoWeb: "arifinbatik.com",
                   title: "Arifin Batik",
                   image: "/arifinBatik.webp",
@@ -23,6 +60,7 @@ const Portofolio = () => {
                   image: "/baritoTehnik.webp",
                   hoverImage: "/logoBaritoTehnik.webp",
             },
+
 
       ]
       return (

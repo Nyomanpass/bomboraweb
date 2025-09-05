@@ -9,20 +9,25 @@ const PortoCard = ({ title, image, hoverImage, linktoWeb, icon }) => {
       const navigate = useNavigate()
 
       const handleOrderClick = (template) => {
-      navigate(`/form-pemesanan?template=${template}&paket=Growth`)
+            navigate(`/form-pemesanan?template=${template}&paket=Growth`)
       }
 
       return (
             <>
                   <div className={`bg-bombora-100 aspect-[5/4] rounded-lg overflow-hidden shadow-lg group transition-all w-full`}>
                         <div className='w-full h-[75%] overflow-hidden relative group'>
-                              <img src={`${base_url}/image/${image}`} alt={title} className='w-full h-full object-cover' />
+                              {icon === 'template' ? (
+                                    <img src={`${base_url}/image/${image}`} alt={title} className='w-full h-full object-cover' />
+                              ) : (
+                                    <img src={`${image}`} alt={title} className='w-full h-full object-cover' />
+                              )
+                              }
                               {hoverImage && (
-                              <img 
-                                    src={hoverImage} 
-                                    alt="" 
-                                    className='absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-300' 
-                              />
+                                    <img
+                                          src={hoverImage}
+                                          alt=""
+                                          className='absolute top-0 left-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-300'
+                                    />
                               )}
                         </div>
 
@@ -32,14 +37,14 @@ const PortoCard = ({ title, image, hoverImage, linktoWeb, icon }) => {
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='hover:scale-110 transition-all' />
                               </a>}
                               {icon === 'template' &&
-                                   <div className="flex gap-4">
-                                     <a onClick={() => handleOrderClick(`${linktoWeb}`)} target='_blank'>
-                                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='hover:scale-110 transition-all' />
-                                    </a>
-                                    <a href={`https://template.bomboraweb.com/templates/${linktoWeb}`} target='_blank'>
-                                          <FontAwesomeIcon icon={faEye} className='hover:scale-110 text-xl transition-all' />
-                                    </a>
-                                   </div>
+                                    <div className="flex gap-4">
+                                          <a onClick={() => handleOrderClick(`${linktoWeb}`)} target='_blank'>
+                                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='hover:scale-110 transition-all' />
+                                          </a>
+                                          <a href={`https://template.bomboraweb.com/templates/${linktoWeb}`} target='_blank'>
+                                                <FontAwesomeIcon icon={faEye} className='hover:scale-110 text-xl transition-all' />
+                                          </a>
+                                    </div>
                               }
                         </div>
                   </div>
