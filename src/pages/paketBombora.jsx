@@ -1,6 +1,7 @@
 import Navbar2 from '../components/Navbar2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
@@ -29,17 +30,17 @@ const PaketBombora = () => {
                                                 <h3 className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Starter</h3>
                                           </div>
                                           <div className="mt-3 ">
-                                                <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 1.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
-                                                <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 750.000 /tahun</p>
+                                                <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 1.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun</span></p>
+                                               
                                           </div>
                                           <div className="mt-10 border-t border-bombora-500 pt-7">
                                                 <p>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      1-2 Halaman Website
+                                                      Website 1–3 Halaman
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      1x Revisi
+                                                      Bebas Revisi
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
@@ -47,12 +48,21 @@ const PaketBombora = () => {
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Gratis Email Bisnis
+                                                      Mobile Friendly
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Mobile Friendly
+                                                      Integrasi WhatsApp Chat
                                                 </p>
+                                                 <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Form Contact
+                                                </p>
+                                                <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Gratis Maintenance
+                                                </p>
+                                               
                                           </div>
                                           <button onClick={() => handleOrderClick('Starter')} className='mt-10 lg:mt-20 xl:mt-28 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl active:scale-95 transition-all duration-300'>
                                                 Pesan Sekarang
@@ -68,83 +78,113 @@ const PaketBombora = () => {
                                                 <h3 className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Growth</h3>
                                           </div>
                                           <div className="mt-3 ">
-                                                <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Rp 2.500.000 <span className="text-sm md:text-base lg:text-sm text-bombora-100 font-semibold">/tahun ke-1</span></p>
-                                                <p className="mt-2 text-bombora-100 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 1.500.000 /tahun</p>
+                                                <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-600">Rp 2.500.000 <span className="text-sm md:text-base lg:text-sm text-bombora-100 font-semibold">/tahun</span></p>
+                                                
                                           </div>
-                                          <div className="mt-10 border-t border-bombora-100 pt-7 flex flex-col gap-3">
-                                                <p>
+                                          <div className="mt-10 border-t border-bombora-100 pt-7">
+                                                 <p>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      3-5 Halaman Website
+                                                      Website 5–7 Halaman
                                                 </p>
-                                                <p >
+                                                <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      3x Revisi
+                                                      Bebas Revisi
                                                 </p>
-                                                <p >
-                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      SEO Basic
-                                                </p>
-                                                <p >
+                                                <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
                                                       Gratis Domain .com
                                                 </p>
-                                                <p >
+                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Gratis Email Bisnis
+                                                       Mobile Friendly
                                                 </p>
-                                                <p >
+                                                <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Animasi Interaktif
+                                                      Integrasi WhatsApp Chat
                                                 </p>
-                                                <p >
+                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Mobile Friendly
+                                                       Gratis Maintenance
                                                 </p>
+                                                 <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                     Gratis Email Bisnis
+                                                </p>
+                                                <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                      SEO Basic
+                                                </p>
+                                                <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Form Contact
+                                                </p>
+                                                <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Desain Modern + Animasi
+                                                </p>
+                                               
                                           </div>
                                           <button onClick={() => handleOrderClick('Growth')} className='mt-10 lg:mt-7 xl:mt-16 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl text-bombora-500 active:scale-95 transition-all duration-300'>
                                                 Pesan Sekarang
                                           </button>
                                     </div>
 
-                                    <div className="md:mx-auto lg:mx-0  px-7 md:px-10 lg:px-5 xl:px-7 py-10 md:aspect-[4/3] md:w-[35rem] lg:aspect-[0.61/1] lg:w-fit lg:h-[32rem] xl:h-[36rem] rounded-xl text-bombora-500 hover:outline hover:outline-offset-8 hover:outline-bombora-200 transition-all bg-bombora-100">
+                                    <div className="md:mx-auto lg:mx-0  px-7 md:px-10 lg:px-5 xl:px-7 py-10 md:aspect-[4/3] md:w-[35rem] lg:aspect-[0.61/1] lg:w-fit lg:h-[32rem] xl:h-[42rem] rounded-xl text-bombora-500 hover:outline hover:outline-offset-8 hover:outline-bombora-200 transition-all bg-bombora-100">
                                           <div>
                                                 <p className="text-sm md:text-base lg:text-sm mb-1">Impresi Kuat, Pelanggan Terpikat</p>
                                                 <h3 className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Premium</h3>
                                           </div>
                                           <div className="mt-3 ">
-                                                <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 5.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun ke-1</span></p>
-                                                <p className="mt-2 text-bombora-500 font-light text-sm md:text-base lg:text-sm ">Perpanjang Rp 3.000.000 /tahun</p>
+                                                <p className="text-[20px] xs:text-3xl lg:text-2xl xl:text-3xl font-semibold text-bombora-300">Rp 5.000.000 <span className="text-sm md:text-base lg:text-sm text-bombora-500 font-semibold">/tahun</span></p>
+                                                
                                           </div>
                                           <div className="mt-10 border-t border-bombora-500 pt-7">
-                                                <p>
+                                               <p>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      6-10 Halaman Website
+                                                      Website 10–20 Halaman
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Bebas Revisi sebelum live
+                                                      Bebas Revisi
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      SEO Advanced
+                                                      Gratis Domain .com atau .id
+                                                </p>
+                                                 <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Mobile Friendly
+                                                </p>
+                                                 <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Gratis Maintenance
+                                                </p>
+                                                 <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                     Gratis Email Bisnis
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Gratis Domain .com / .id
+                                                      SEO Advanced +  Kecepatan
+                                                </p>
+                                                 <p className='mt-1'>
+                                                      <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
+                                                       Form Contact
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Gratis Email Bisnis
+                                                       Payment / Booking / Gallery
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Animasi Interaktif
+                                                       Desain Premium + Animasi
                                                 </p>
                                                 <p className='mt-1'>
                                                       <FontAwesomeIcon icon={faCheck} className='font-semibold pr-4' />
-                                                      Mobile Friendly
+                                                       Backup & Update Berkala
                                                 </p>
-                                                
+                                               
+
                                           </div>
                                           <button onClick={() => handleOrderClick('Premium')} className='mt-10 lg:mt-5 xl:mt-14 block mx-auto w-full  px-10 py-3 bg-bombora-600 font-semibold rounded-xl active:scale-95 transition-all duration-300'>
                                                 Pesan Sekarang
@@ -191,10 +231,10 @@ const PaketBombora = () => {
                                                                   1-3 halaman
                                                             </td>
                                                             <td className="px-6 py-8">
-                                                                  3-5 halaman
+                                                                  5-7 halaman
                                                             </td>
                                                             <td className="px-6 py-8">
-                                                                  6-10 halaman
+                                                                  10-20 halaman
                                                             </td>
                                                       </tr>
                                                       <tr className="bg-white border-b  border-gray-200">
@@ -230,7 +270,7 @@ const PaketBombora = () => {
                                                                   Free Email Bisnis
                                                             </th>
                                                             <td className="px-6 py-8">
-                                                                  <FontAwesomeIcon icon={faCheck} className='text-lg md:text-xl' />
+                                                                  <FontAwesomeIcon icon={faXmark} className='text-lg md:text-xl' />
                                                             </td>
                                                             <td className="px-6 py-8">
                                                                   <FontAwesomeIcon icon={faCheck} className='text-lg md:text-xl' />
@@ -272,10 +312,10 @@ const PaketBombora = () => {
                                                                   Revisi
                                                             </th>
                                                             <td className="px-6 py-8">
-                                                                  1x
+                                                                  Bebas Revisi Sebelum Live
                                                             </td>
                                                             <td className="px-6 py-8">
-                                                                  3x
+                                                                  Bebas Revisi Sebelum Live
                                                             </td>
                                                             <td className="px-6 py-8">
                                                                   Bebas Revisi Sebelum Live
